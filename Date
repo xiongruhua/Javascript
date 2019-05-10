@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<mate charset="utf-8">
+	<title>date</title>
+	<script type="text/javascript">
+		function displaytime(){
+		var time=new Date();
+		//document.write(time);
+
+		var hour=time.getHours();
+		var minute=time.getMinutes();
+		var second=time.getSeconds();
+		var apm="AM";
+
+		if(hour>12){
+			apm=PM;
+		}
+		if(second<10){
+			second="0"+second;
+		}
+		if(minute<10){
+			minute="0"+minute;
+		}
+		if(hour<10){
+			hour="0"+hour;
+		}
+
+		document.getElementById("mytime").value=hour+":"+minute+":"+second+":"+apm;
+
+		//document.write(hour+";"+minute+";"+second);
+		//document.write(minute);
+		//document.write(second);
+
+		setTimeout("displaytime()",1000);
+    }
+	</script>
+</head>
+<body onload="displaytime()">
+	<form>
+		<input type="text" id="mytime"/>
+	</form>>
+</body>
+</html>
